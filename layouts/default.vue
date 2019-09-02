@@ -1,10 +1,31 @@
 <template>
   <div>
+    <!-- 渲染头部文件 -->
+    <Header/>
+
+    <!-- 页面的占位符，相当于router-view -->
     <nuxt />
+
+    <!-- 渲染尾部文件 -->
+    <Footer/>
   </div>
 </template>
+<script>
+// 引入头文件
+import Header from '@/components/header.vue';
 
-<style>
+//引入尾部文件
+import Footer from '@/components/footer';
+export default {
+  //注册文件
+  components:{
+    Header,
+    Footer
+  }
+}
+</script>
+
+<style >
 html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -17,7 +38,31 @@ html {
   box-sizing: border-box;
 }
 
-*,
+*{
+margin: 0;
+padding: 0;
+}
+
+ul,li,ol{
+  list-style: none;
+
+}
+
+i,em{
+  font-style: normal;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover{
+  color: inherit;
+}
+
+
+/* *,
 *:before,
 *:after {
   box-sizing: border-box;
@@ -51,5 +96,5 @@ html {
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
-}
+} */
 </style>
